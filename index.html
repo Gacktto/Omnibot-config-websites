@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1e8d1a8bec.js" crossorigin="anonymous"></script>
     <title>Configuração - Chaves na mão</title>
 </head>
 <body>
@@ -13,32 +14,56 @@
         </div>
         <div class="ad-config">
             <div class="wrap-input">
-                <label>Email</label>
-                <input type="text" id="email">
+                <label>
+                    Email
+                    <i class="fa-solid fa-circle-info" onmouseenter="hideAndShow(event, 'infoEmail')" onmouseleave="hideAndShow(event, 'infoEmail')"></i>
+                </label>
+                <span id="infoEmail" class="info hide">Email da sua plataforma de anúncios.</span>
+                <input type="text" id="email" placeholder="ex: user@gmail.com">
             </div>
             <div class="wrap-input">
-                <label>Senha</label>
-                <input type="text" id="senha">
+                <label>
+                    Senha
+                    <i class="fa-solid fa-circle-info" onmouseenter="hideAndShow(event, 'infoSenha')" onmouseleave="hideAndShow(event, 'infoSenha')"></i>
+                </label>
+                <span id="infoSenha" class="info hide">Senha da sua plataforma de anúncios.</span>
+                <input type="text" id="senha" placeholder="ex: user54321">
             </div>
             <div class="wrap-input">
                 <label>Preço</label>
-                <input type="number" id="preco" min="0" max="99999999999">
+                <input type="number" id="preco" min="0" max="99999999999" placeholder="ex: 1540">
             </div>
             <div class="wrap-input">
-                <label>Área</label>
-                <input type="number" id="area" min="0" max="99999999999">
+                <label>
+                    Área
+                    <i class="fa-solid fa-circle-info" onmouseenter="hideAndShow(event, 'infoArea')" onmouseleave="hideAndShow(event, 'infoArea')"></i>
+                </label>
+                <span id="infoArea" class="info hide">Tamanho da área.</span>
+                <input type="number" id="area" min="0" max="99999999999" placeholder="ex: 350">
             </div>
             <div class="wrap-input">
-                <label>Rua</label>
-                <input type="text" id="rua">
+                <label>
+                    Rua
+                    <i class="fa-solid fa-circle-info" onmouseenter="hideAndShow(event, 'infoRua')" onmouseleave="hideAndShow(event, 'infoRua')"></i>
+                </label>
+                <span id="infoRua" class="info hide">Nome de uma rua que será usada no anúncio caso o CEP usado não contenha todas as informações de localização.</span>
+                <input type="text" id="rua" placeholder="ex: Av. Dom Pedro II">
             </div>
             <div class="wrap-input">
-                <label>Vídeo</label>
-                <input type="text" id="video">
+                <label>
+                    Vídeo
+                    <i class="fa-solid fa-circle-info" onmouseenter="hideAndShow(event, 'infoVideo')" onmouseleave="hideAndShow(event, 'infoVideo')"></i>
+                </label>
+                <span id="infoVideo" class="info hide">Link do vídeo que será usado no anúncio.</span>
+                <input type="text" id="video" placeholder="ex: www.link.com">
             </div>
             <div class="wrap-input">
-                <label>Referência</label>
-                <input type="text" id="ref">
+                <label>
+                    Referência
+                    <i class="fa-solid fa-circle-info" onmouseenter="hideAndShow(event, 'infoRef')" onmouseleave="hideAndShow(event, 'infoRef')"></i>
+                </label>
+                <span id="infoRef" class="info hide">Código de referência do anúncio.</span>
+                <input type="text" id="ref" placeholder="ex: COD-123">
             </div>
             <div class="wrap-input">
                 <button id="baixar" onclick="gerarConfiguracao()">Baixar Configuração</button>

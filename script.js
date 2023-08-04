@@ -38,3 +38,15 @@ function gerarConfiguracao() {
     // Remove o elemento <a> temporário da página
     document.body.removeChild(downloadLink);
 }
+
+function hideAndShow(event, spanId) {
+    var elemento = document.getElementById(spanId);
+
+    if (elemento.classList.contains("hide")) {
+        // Se a classe "hide" já estiver presente, remover para exibir o elemento
+        elemento.classList.remove("hide");
+    } else {
+        // Se a classe "hide" não estiver presente, adicionar para esconder o elemento
+        elemento.classList.add("hide");
+    }
+}
