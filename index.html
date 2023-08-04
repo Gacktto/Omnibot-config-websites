@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Configuração - Chaves na mão</title>
+</head>
+<body>
+    <div class="wrap-main-content">
+        <div class="site-logo">
+            <img src="logo-cnmao.webp" alt="logo-chaves-na-mão">
+        </div>
+        <div class="ad-config">
+            <div class="wrap-input">
+                <label>Email</label>
+                <input type="text" id="email">
+            </div>
+            <div class="wrap-input">
+                <label>Senha</label>
+                <input type="text" id="senha">
+            </div>
+            <div class="wrap-input">
+                <label>Preço</label>
+                <input type="number" id="preco" min="0" max="99999999999">
+            </div>
+            <div class="wrap-input">
+                <label>Área</label>
+                <input type="number" id="area" min="0" max="99999999999">
+            </div>
+            <div class="wrap-input">
+                <label>Rua</label>
+                <input type="text" id="rua">
+            </div>
+            <div class="wrap-input">
+                <label>Vídeo</label>
+                <input type="text" id="video">
+            </div>
+            <div class="wrap-input">
+                <label>Referência</label>
+                <input type="text" id="ref">
+            </div>
+            <div class="wrap-input">
+                <button id="baixar" onclick="gerarConfiguracao()">Baixar Configuração</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
