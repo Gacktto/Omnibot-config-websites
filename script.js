@@ -7,6 +7,14 @@ function gerarConfiguracao() {
     const rua = document.getElementById('rua').value;
     const video = document.getElementById('video').value;
     const ref = document.getElementById('ref').value;
+    const opt1 = document.getElementById('op1').checked ? 1 : 0;
+    const opt2 = document.getElementById('op2').checked ? 1 : 0;
+    const opt3 = document.getElementById('op3').checked ? 1 : 0;
+    const opt4 = document.getElementById('op4').checked ? 1 : 0;
+    const opt5 = document.getElementById('op5').checked ? 1 : 0;
+    const opt6 = document.getElementById('op6').checked ? 1 : 0;
+    const opt7 = document.getElementById('op7').checked ? 1 : 0;
+    const opt8 = document.getElementById('op8').checked ? 1 : 0;
 
 
     // Cria um objeto JSON com os valores
@@ -17,7 +25,15 @@ function gerarConfiguracao() {
         area: area,
         rua: rua,
         video: video,
-        ref: ref
+        ref: ref,
+        esquina: opt1,
+        meioQuadra: opt2,
+        agua: opt3,
+        esgoto: opt4,
+        opt5: opt5,
+        opt6: opt6,
+        opt7: opt7,
+        opt8: opt8
     };
 
     // Converte o objeto JSON para uma string formatada
@@ -50,3 +66,18 @@ function hideAndShow(event, spanId) {
         elemento.classList.add("hide");
     }
 }
+
+const moveBt = document.getElementById("moveBt");
+
+moveBt.addEventListener('click', () => {
+    const adOpt = document.querySelector(".ad-options");
+    adOpt.classList.toggle('expand');
+
+    const iconBt = document.getElementById('iconBt');
+    iconBt.classList.toggle('rotate180');
+
+    const optionElements = document.querySelectorAll(".option");
+    optionElements.forEach(option => {
+        option.classList.toggle('hide');
+    });
+});
