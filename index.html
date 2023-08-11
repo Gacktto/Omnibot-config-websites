@@ -8,6 +8,17 @@
     <title>Configuração - Chaves na mão</title>
 </head>
 <body>
+    <div class="side-bar">
+        <div class="site" style="background-color: lightblue;">
+            A
+        </div>
+        <div class="site" style="background-color: lightgreen;">
+            B
+        </div>
+        <div class="site">
+            C
+        </div>
+    </div>
     <div class="wrap-main-content">
         <div class="site-logo">
             <img src="logo-cnmao.webp" alt="logo-chaves-na-mão">
@@ -43,6 +54,14 @@
             </div>
             <div class="wrap-input">
                 <label>
+                    Área Total
+                    <!-- <i class="fa-solid fa-circle-info" onmouseenter="hideAndShow(event, 'infoArea')" onmouseleave="hideAndShow(event, 'infoArea')"></i> -->
+                </label>
+                <span id="infoArea" class="info hide">Tamanho da área.</span>
+                <input type="number" id="areaTotal" min="0" max="99999999999" placeholder="ex: 700">
+            </div>
+            <div class="wrap-input">
+                <label>
                     Rua
                     <i class="fa-solid fa-circle-info" onmouseenter="hideAndShow(event, 'infoRua')" onmouseleave="hideAndShow(event, 'infoRua')"></i>
                 </label>
@@ -64,6 +83,10 @@
                 </label>
                 <span id="infoRef" class="info hide">Código de referência do anúncio.</span>
                 <input type="text" id="ref" placeholder="ex: COD-123">
+            </div>
+            <div class="wrap-input">
+                <button id="upload" onclick="abrirConfiguracao()">Upload</button>
+                <input type="file" id="fileInput" style="display: none;" onchange="carregarConfiguracao()">
             </div>
             <div class="wrap-input">
                 <button id="baixar" onclick="gerarConfiguracao()">Baixar Configuração</button>

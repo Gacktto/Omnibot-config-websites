@@ -4,6 +4,7 @@ function gerarConfiguracao() {
     const senha = document.getElementById('senha').value;
     const preco = document.getElementById('preco').value;
     const area = document.getElementById('area').value;
+    const areaTotal = document.getElementById('areaTotal').value;
     const rua = document.getElementById('rua').value;
     const video = document.getElementById('video').value;
     const ref = document.getElementById('ref').value;
@@ -23,6 +24,7 @@ function gerarConfiguracao() {
         senha: senha,
         preco: preco,
         area: area,
+        areaTotal: areaTotal,
         rua: rua,
         video: video,
         ref: ref,
@@ -81,3 +83,44 @@ moveBt.addEventListener('click', () => {
         option.classList.toggle('hide');
     });
 });
+
+function abrirConfiguracao() {
+    const fileInput = document.getElementById('fileInput');
+    fileInput.click();
+}
+
+function carregarConfiguracao() {
+    const fileInput = document.getElementById('fileInput');
+    
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+        try {
+            const jsonString = event.target.result;
+            const configuracao = JSON.parse(jsonString);
+
+            // Preencha os campos do formulário com os dados do objeto JSON
+            document.getElementById('email').value = configuracao.email;
+            document.getElementById('senha').value = configuracao.senha;
+            document.getElementById('preco').value = configuracao.preco;
+            document.getElementById('area').value = configuracao.area;
+            document.getElementById('areaTotal').value = configuracao.areaTotal;
+            document.getElementById('rua').value = configuracao.rua;
+            document.getElementById('video').value = configuracao.video;
+            document.getElementById('ref').value = configuracao.ref;
+            document.getElementById('op1').checked = configuracao.esquina === 1;
+            document.getElementById('op2').checked = configuracao.meioQuadra === 1;
+            document.getElementById('op3').checked = configuracao.agua === 1;
+            document.getElementById('op4').checked = configuracao.esgoto === 1;
+            document.getElementById('op5').checked = configuracao.opt5 === 1;
+            document.getElementById('op6').checked = configuracao.opt6 === 1;
+            document.getElementById('op7').checked = configuracao.opt7 === 1;
+            document.getElementById('op8').checked = configuracao.opt8 === 1;
+        } catch (error) {
+            console.error('Erro ao carregar o arquivo JSON:', error);
+        }
+    };
+
+    reader.readAsText(file);
+}

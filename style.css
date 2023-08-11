@@ -19,12 +19,55 @@ body{
     flex-direction: row;
 }
 
+.side-bar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    margin: auto;
+    width: 60px;
+    height: fit-content;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: -10px 10px 20px 0px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.site{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    width: 60px;
+    background-color: rgb(255, 55, 55);
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: height 0.1s ease;
+}
+
+.site:hover{
+    cursor: pointer;
+    background-color: rgb(255, 112, 112);
+    height: 70px;
+}
+
 .wrap-main-content{
     position: relative;
     background-color: rgb(202, 202, 202);
     width: 450px;
     z-index: 1;
-    height: 450px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 20px;
     border-radius: 5px 0 0 5px;
     box-shadow: -10px 10px 20px 0px rgba(0, 0, 0, 0.2);
@@ -52,7 +95,7 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     width: 450px;
-    height: 370px;
+    height: fit-content;
     border-radius: 0px 0px 5px 5px;
 }
 
@@ -148,7 +191,7 @@ input[type="number"]::-webkit-outer-spin-button {
     position: relative;
     background-color: rgb(255, 55, 55);
     width: 0px;
-    height: 450px;
+    height: 500px;
     padding: 20px 5px 20px 5px;
     /* padding: 20px; */
     border-radius: 0 5px 5px 0;
